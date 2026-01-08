@@ -3,7 +3,7 @@
 # Contributor: artoo <artoo@persianosx.org>
 # Contributor: anex <assassin.anex[@]gmail.com>
 
-_repo=persianosx-tools-livecd
+_repo=persianosx-tools-disk
 
 pkgbase=persianosx-live
 pkgname=('persianosx-live-base'
@@ -12,16 +12,16 @@ pkgname=('persianosx-live-base'
 	'persianosx-live-portable-efi')
 pkgver=r29.876fa8d
 pkgrel=1
-pkgdesc='persianosx Linux live session'
+pkgdesc='PersianOSX live session'
 arch=('any')
-url="https://gitlab.com/persianosx-linux/tools/persianosx-tools-livecd"
+url="https://github.com/p30developer/persianosx-live-disk"
 license=('GPL')
 makedepends=('git')
 source=("git+$url.git")
 sha256sums=('SKIP')
 
 pkgver() {
-	cd "${srcdir}"/persianosx-tools-livecd || exit
+	cd "${srcdir}"/persianosx-tools-disk || exit
 	printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
 }
 
