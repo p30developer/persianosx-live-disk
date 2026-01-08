@@ -1,0 +1,8 @@
+[Unit]
+Description=LiveMedia Keyring setup
+After=drivers-live.service
+After=persianosx-live.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/persianosx-live-keyring

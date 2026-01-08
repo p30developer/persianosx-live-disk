@@ -1,0 +1,11 @@
+[Unit]
+Description=LiveMedia Config Script
+Before=systemd-user-sessions.service
+Wants=persianosx-live-keyring.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/persianosx-live
+
+[Install]
+WantedBy=multi-user.target

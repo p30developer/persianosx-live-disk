@@ -1,0 +1,16 @@
+#!/bin/sh
+
+xdg=$(xdg-user-dir DESKTOP)
+src='/usr/share/applications'
+
+if [[ -f /usr/bin/calamares ]]; then
+	install -Dm755 $src/calamares.desktop \
+	$xdg/calamares.desktop
+fi
+
+# workaround for glib trash bug (https://bugzilla.gnome.org/show_bug.cgi?id=748248)
+userid=$(id -u $USER)
+if [ ! -d "/.Trash-$userid" ]; then
+    sudo mkdir -p /.Trash-$userid/{expunged,files,info}
+    sudo chown -R $userid /.Trash-$userid
+fi
