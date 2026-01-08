@@ -6,7 +6,7 @@ SYSCONFDIR = /etc
 BIN = \
 	bin/persianosx-live \
 	bin/persianosx-live-keyring \
-	bin/ght-live
+	bin/drivers-live
 
 XBIN = \
 	bin/desktop-items \
